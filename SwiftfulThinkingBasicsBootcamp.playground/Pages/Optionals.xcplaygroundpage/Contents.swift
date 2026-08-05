@@ -9,35 +9,34 @@ let myBool: Bool = false
 // "We don't know if there is a value, but if there is, it is a Boolean"
 var myOtherBool: Bool? = nil
 
-//print(myOtherBool)
-//myOtherBool = true
-//print(myOtherBool)
-//myOtherBool = false
-//print(myOtherBool)
-//myOtherBool = nil
-//print(myOtherBool)
 
-// nil coalescing operator
+// we don't know if there is a value, but if there is, it is a Boolean
+let myOtherBool: Bool? = false
+print(myOtherBool) // Optional(false)
 
-let newValue: Bool? = myOtherBool
+var myOtherBool2: Bool? = nil
+print(myOtherBool2) // nil
 
-// "The value of myOtherBool (if there is one), otherwise false"
-let newValue2: Bool = myOtherBool ?? false
+myOtherBool2 = true
+print(myOtherBool2) // Optional(true)
+print(myOtherBool2!) // true
 
+// also optional bool
+let newValue: Bool? = myOtherBool2
+
+// the value of myOtherBoo12 (if there is one), otherwise false
+myOtherBool2 = nil
+let newValue2: Bool = myOtherBool2 ?? false
 print("New value 2: \(newValue2.description)")
+print("New value 2: \(newValue2)")
 
-var myString: String? = "Hello, world!"
+// String also appy the optional
+var myString: String? = nil
+let newString = myString ?? "Hello" // if myString has no value, it return "Hello"
+print(newString)
 
-print(myString ?? "There is no value!")
-
-myString = "New text!"
-print(myString ?? "There is no value!")
-
-myString = nil
-
-print(myString ?? "There is no value!")
-
-//let newString = myString ?? "some default value"
+myString = "Hello World" // it has the value now
+print(myString ?? "No value") // so it will print the "Hello World"
 
 
 // ---------------------------------------------------
