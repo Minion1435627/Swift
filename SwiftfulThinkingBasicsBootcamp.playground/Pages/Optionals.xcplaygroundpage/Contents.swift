@@ -44,14 +44,16 @@ print(myString ?? "No value") // so it will print the "Hello World"
 
 var userIsPremium: Bool? = nil
 
+// return the boolean
 func checkIfUserIsPremium() -> Bool? {
     return userIsPremium
 }
 
+// this function make sure that it return with the boolean
+// since it default value will be false
 func checkIfUserIsPremium2() -> Bool {
     return userIsPremium ?? false
 }
-
 
 let isPremium = checkIfUserIsPremium2()
 
@@ -61,6 +63,7 @@ let isPremium = checkIfUserIsPremium2()
 func checkIfUserIsPremium3() -> Bool {
     
     // If there is a value, let newValue equal that value
+    // if there is value in the userIsPreminum, since userIsPremium is Bool?
     if let newValue = userIsPremium {
         // Here we have access to the non-optional value
         return newValue
@@ -69,6 +72,7 @@ func checkIfUserIsPremium3() -> Bool {
     }
 }
 
+// same as the checkIfUserIsPremium3
 func checkIfUserIsPremium4() -> Bool {
     if let newValue = userIsPremium {
         return newValue
@@ -77,6 +81,7 @@ func checkIfUserIsPremium4() -> Bool {
     return false
 }
 
+// same as the checkIfUserIsPremium3
 func checkIfUserIsPremium5() -> Bool {
     if let userIsPremium {
         return userIsPremium
@@ -84,6 +89,7 @@ func checkIfUserIsPremium5() -> Bool {
     
     return false
 }
+
 
 // Guard
 // When a guard is a failure, enter the closure
@@ -116,13 +122,16 @@ var userIsNew: Bool? = true
 var userDidCompleteOnboarding: Bool? = false
 var userFavoriteMovie: String? = nil
 
-
+// this function is to check that the variable is no longer optional
 func checkIfUserIsSetUp() -> Bool {
     
+    // unwrap
     if let userIsNew, let userDidCompleteOnboarding, let userFavoriteMovie {
         // userIsNew == Bool AND
         // userDidCompleteOnboarding == Bool AND
         // userFavoriteMovie == String
+        
+        // pass the value to another function (getUserStatus)
         return getUserStatus(
             userIsNew: userIsNew,
             userDidCompleteOnboarding: userDidCompleteOnboarding,
@@ -166,6 +175,7 @@ func getUserStatus(userIsNew: Bool, userDidCompleteOnboarding: Bool, userFavorit
 
 
 // layered if-let
+// more complex to do this
 func checkIfUserIsSetUp3() -> Bool {
     if let userIsNew {
         // userIsNew == Bool
@@ -197,6 +207,7 @@ func checkIfUserIsSetUp3() -> Bool {
 
 
 // layered guard
+// so in this case that guard is more useful 
 func checkIfUserIsSetUp4() -> Bool {
     guard let userIsNew else {
         // userIsNew == nil
@@ -286,3 +297,4 @@ func getUserData() {
 
 // explicitly unwrap optional
 // !
+
