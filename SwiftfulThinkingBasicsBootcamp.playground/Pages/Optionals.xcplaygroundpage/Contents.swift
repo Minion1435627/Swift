@@ -270,6 +270,7 @@ func getUserData() {
     let username: String? = getUsername()
     
     // "I will get the count if the username is not nil"
+    // this count is also optional
     let count: Int? = username?.count
     
     let title: String = getTitle()

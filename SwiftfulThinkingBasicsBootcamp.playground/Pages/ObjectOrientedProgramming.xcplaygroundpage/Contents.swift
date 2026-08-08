@@ -20,7 +20,8 @@ import Foundation
  // We want to create objects only when we need them
  // And destory them as soon as we no longer need them
  
- // For example, if an app has 2 screens and user is moving from screen 1 to screen 2. We only want to allocate screen 2 WHEN we need it (ie. when the user clicks a button to segue to screen 2). When we get to screen 2, we may want to deallocate screen 1.
+ // For example, if an app has 2 screens and user is moving from screen 1 to screen 2.
+ // We only want to allocate screen 2 WHEN we need it (ie. when the user clicks a button to segue to screen 2). When we get to screen 2, we may want to deallocate screen 1.
  
  
  // There are 2 types of Memory
@@ -39,6 +40,7 @@ import Foundation
  // Objects in the Heap
  // Functions
  // NEW: Class, Actors
+ // Only above will be counted in ARC
  
  
  // iPhone is a "multi-threaded environment"
@@ -47,7 +49,7 @@ import Foundation
  // But there is only 1 Heap for all threads
  
  // Therefore:
- // Stack is faster, lower memory footprint, preferable
+ // Stack is faster, lower memory footprint, preferable // this is the reason why we use struct in SwiftUI
  // Heap is slower, higher memory footprint, risk of threading issues
  
  

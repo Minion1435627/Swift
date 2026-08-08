@@ -52,6 +52,7 @@ struct UserModel {
 
 var user1: UserModel = UserModel(name: "Nick", isPremium: false)
 
+// make the totally new object, but with the same user name and switch the isPremium
 func markUserAsPremium() {
     print(user1)
     user1 = UserModel(name: user1.name, isPremium: true)
@@ -63,6 +64,7 @@ func markUserAsPremium() {
 // -----------------------------------------------------
 
 // "mutable struct"
+// this version use the function that is not in the struct, but the below "UserModel4" put the function in the struct
 struct UserModel2 {
     let name: String
     var isPremium: Bool
@@ -83,6 +85,7 @@ markUserAsPremium2()
 // -----------------------------------------------------
 
 // "immutable struct"
+// And add the function in the struct
 struct UserModel3 {
     let name: String
     let isPremium: Bool
@@ -117,6 +120,7 @@ user4.markUserAsPremium()
 user4.updateIsPremium(newValue: true)
 
 
+// rather than using tuple, we can use struct
 struct User5 {
     let name: String
     let isPremium: Bool
