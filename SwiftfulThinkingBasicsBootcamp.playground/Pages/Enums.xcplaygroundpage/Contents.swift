@@ -7,14 +7,17 @@ struct CarModel {
     let model: String
 }
 
-struct CarBrand {
-    let title: String
-}
+//struct CarBrand {
+//    let title: String
+//}
+
 
 // Enums are stored in memory the same way as a Struct but we cannot mutate them
 enum CardBrandOption {
     case ford, toyota, honda
     
+    
+    // u need the title for these brand
     var title: String {
         switch self {
         case .ford:
@@ -29,21 +32,27 @@ enum CardBrandOption {
     }
 }
 
+/*The below function is created when there is no enum function
 //var car1: CarModel = CarModel(brand: "Ford", model: "Fiesta")
 //var car2: CarModel = CarModel(brand: "Ford", model: "Focus")
 //var car3: CarModel = CarModel(brand: "Toyota", model: "Camry")
+*/
 
-
+/* The below function is also created before enum function
 //var brand1 = CarBrand(title: "Ford")
 //var brand2 = CarBrand(title: "Toyota")
 //
 //var car1 = CarModel(brand: brand1, model: "Fiesta")
 //var car2 = CarModel(brand: brand1, model: "Focus")
 //var car3 = CarModel(brand: brand2, model: "Camry")
+ */
 
+// the .variables are constrain to the case that clarify in the enum function
 var car1 = CarModel(brand: .ford, model: "Fiesta")
 var car2 = CarModel(brand: .ford, model: "Focus")
 var car3 = CarModel(brand: .toyota, model: "Camry")
+
+var car4 = CarModel(brand: .toyota, model: "Camry")
 
 var fordBrand: CardBrandOption = .ford
 
