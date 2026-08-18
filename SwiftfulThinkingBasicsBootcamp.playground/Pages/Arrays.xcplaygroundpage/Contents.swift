@@ -4,17 +4,20 @@ import Foundation
 
 // Arrays, Sets
 
+// array has the index
+// set: items are unique
+
 
 var myTitle: String = "Hello, world!"
 var myTitle2: String = "Hello, world!!!"
 
 // Tuple
-
+// pass the two data together
 func doSomething(value: (title1: String, title2: String)) {
     
 }
-
 doSomething(value: (myTitle, myTitle2))
+
 
 // Custom data model
 struct TitlesModel {
@@ -29,15 +32,16 @@ func doSomething(value: TitlesModel) {
 doSomething(value: TitlesModel(title1: myTitle, title2: myTitle2))
 
 
-// --------------------------
+// -------------------------------
+// the below is to solve the problem above
 
 
 let apple: String = "Apple"
 let orange: String = "Orange"
 
-let fruits1: [String] = ["Apple", "Orange"]
+let fruits1: [String] = ["Apple", "Orange"] // seperate by comma
 let fruits2: [String] = [apple, orange]
-let fruits3: Array<String> = [apple, orange]
+let fruits3: Array<String> = [apple, orange] // fruit2 and friut3 are same
 
 let myBools: [Bool] = [true, false, true, true, true, false]
 
@@ -53,16 +57,18 @@ let count = fruitsArray.count
 let firstItem = fruitsArray.first
 let lastItem = fruitsArray.last
 
+// to make sure that the firstItem has the value rather than nil
 if let firstItem = fruitsArray.first {
     // first item
 }
 
 
-//fruitsArray = fruitsArray + ["Banana", "Mango"]
+//fruitsArray = fruitsArray + ["Banana", "Mango"] // it it okay, but need to make sure that value is var rather than let
 
 //fruitsArray.append("Banana")
 //fruitsArray.append("Mango")
 
+// append two item at the same time
 fruitsArray.append(contentsOf: ["Banana", "Mango"])
 
 
@@ -71,6 +77,7 @@ fruitsArray.append(contentsOf: ["Banana", "Mango"])
 
 fruitsArray[0]
 
+// use to check that the index exist
 if fruitsArray.indices.contains(4) {
     let item = fruitsArray[4]
 }
@@ -116,4 +123,4 @@ print(finalFruits)
 
 var fruitsSet: Set<String> = ["Apple", "Orange", "Banana", "Apple"]
 
-print(fruitsSet)
+print(fruitsSet) // apple only display once, can don't have the same order

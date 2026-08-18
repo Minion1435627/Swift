@@ -28,6 +28,7 @@ var allPremiumUsers: [DatabaseUser] = allUsers.filter { user in
     user.isPremium
 }
 
+// this doing the same thing as before, using the $0 means user
 var allPremiumUsers2: [DatabaseUser] = allUsers.filter({ $0.isPremium })
 
 
@@ -39,6 +40,8 @@ var allPremiumUsers2: [DatabaseUser] = allUsers.filter({ $0.isPremium })
 //print(allPremiumUsers)
 
 
+
+// sorting
 var orderedUsers: [DatabaseUser] = allUsers.sorted { user1, user2 in
     return user1.order < user2.order
 }
@@ -48,6 +51,9 @@ var orderedUsers2: [DatabaseUser] = allUsers.sorted(by: { $0.order < $1.order })
 print(orderedUsers)
 
 
+
+//Map
+// instead of using the loop
 var userNames: [String] = allUsers.map { user in
     return user.name
 }

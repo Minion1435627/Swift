@@ -11,13 +11,13 @@ var fruitsSet: Set<String> = ["Apple", "Orange", "Banana", "Apple"]
 
 print(fruitsSet)
 
-
+// okay to have same value with different key in dictionary
 var myFirstDictionary: [String : Bool] = [
     "Apple" : true,
     "Orange" : false
 ]
 
-
+// dictionary is optional type
 let item = myFirstDictionary["Banana"]
 
 
@@ -27,10 +27,22 @@ var anotherDictionary: [String : String] = [
     "def" : "Banana",
 ]
 
+
 let item2 = anotherDictionary["abc"]
 
+
+var anotherDictionary2: [Int : String] = [
+    1 : "Apple",
+    2 : "Banana",
+]
+
+let item3 = anotherDictionary2[1]
+
+
+// apend the dictionary
 anotherDictionary["xyz"] = "Mango"
 
+// remove from dictionary
 anotherDictionary.removeValue(forKey: "def")
 
 print(anotherDictionary)
@@ -48,6 +60,7 @@ var postArray: [PostModel] = [
     PostModel(id: "xyz987", title: "Post 3", likeCount: 217),
 ]
 
+// array need to check that there is value in the index
 if postArray.indices.contains(1) {
     let item = postArray[1]
     print(item)

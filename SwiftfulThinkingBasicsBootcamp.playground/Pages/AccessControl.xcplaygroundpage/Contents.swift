@@ -24,10 +24,10 @@ enum MovieGenre {
 
 class MovieManager {
  
-    // public
+    // public: for get and set
     public var movie1 = MovieModel(title: "Avatar", genre: .action, isFavorite: false)
     
-    // private
+    // private: can only access in the class
     private var movie2 = MovieModel(title: "Step Brothers", genre: .comedy, isFavorite: false)
     
     // read is public, set is private
@@ -43,8 +43,11 @@ let manager = MovieManager()
 
 let someValue = manager.movie3
 
+// immutating version
 //manager.movie1 = manager.movie1.updateFavoriteStatus(newValue: true)
-//manager.movie3.updateFavoriteStatus2(newValue: true)
+
+
+//manager.movie3.updateFavoriteStatus2(newValue: true) // this didn't work
 manager.updateMovie3(isFavorite: true)
 print(manager.movie3)
 

@@ -49,8 +49,13 @@ for (index, lesson) in allLessons.enumerated() {
     
     if index == 1 {
 //        break
-        continue
+        continue // without printing the index == 1 
     }
     
     print("index: \(index) || lesson: \(lesson)")
+    
+//    Print result
+//    index: 0 || lesson: LessonModel(title: "Lesson 1", isFavorite: true)
+//    index: 2 || lesson: LessonModel(title: "Lesson 3", isFavorite: false)
+//    index: 3 || lesson: LessonModel(title: "Lesson 4", isFavorite: true)
 }
